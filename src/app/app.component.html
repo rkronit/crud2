@@ -1,0 +1,59 @@
+
+<div class="container-fluid" >
+<div class="bg-color" style="background-color: #FBC02D; height: 700px;">
+<div class="container" style="padding-top: 100px;">
+  <div class="card " style="height: auto; border-radius: 25px;  box-shadow: 5px 10px 8px #888888;">
+    <div class="card-body">
+  <div class="row">
+   
+      
+    <div class="col-lg-3 col-md-3 col-12 " style="padding-top: 50px;"  >
+      <h2>Add Employee</h2>
+      <div class="form-group">
+        <label for="text"><b>Position ID</b></label>
+        <input type="text" class="form-control" placeholder="" [(ngModel)]="positionID" >
+      </div>
+      <div class="form-group">
+        <label for="text"><b>Position Name </b></label>
+        <input type="text" class="form-control" placeholder="" [(ngModel)]="positionName" >
+      </div>
+      <div class="form-group">
+        <label for="text"><b>Position Type</b></label>
+        <input type="text" class="form-control" placeholder="" [(ngModel)]="positionType">
+      </div>
+
+
+      <button type="submit" class="btn btn-primary" (click)="submit()" *ngIf="submitButton==true">Submit</button>
+      <button type="submit" class="btn btn-dark" (click)="update()" *ngIf="submitButton==false">update</button>
+    
+    </div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <div class="col-lg-8  col-md-8 col-12 text-center" style="padding-top: 50px;">
+      <h2>Employee Details</h2>
+      <table class="table table-bordered ">
+        <thead>
+          <tr>
+            <th>positionID</th>
+            <th>positionName</th>
+            <th>positionType</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of empDetails ; let _id=index"  >
+            <td>{{item.positionID}}</td>
+            <td>{{item.positionName}}</td>
+            <td>{{item.positionType}}</td>
+            <td>
+              <button type="button" class="btn btn-outline-primary" (click)="edit(_id)">Edit</button>&nbsp;
+              <button type="button" class="btn btn-outline-danger" (click)="delete(item._id)">Delete</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+  </div>
+</div>
+</div>
+</div>
